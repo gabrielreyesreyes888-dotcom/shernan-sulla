@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shernan C. Sulla | Developer Portfolio</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Tailwind Config for Industrial Theme -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        steel: {
+                            900: '#18181b', /* Zinc 900 */
+                            800: '#27272a', /* Zinc 800 */
+                            700: '#3f3f46', /* Zinc 700 */
+                        },
+                        rust: {
+                            500: '#f59e0b', /* Amber 500 for industrial accent */
+                            600: '#d97706', /* Amber 600 */
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Roboto', 'sans-serif'],
+                        heavy: ['Oswald', 'sans-serif'], /* Thick, blocky font for headings */
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts: Oswald & Roboto -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS (Animate On Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Industrial Custom CSS -->
+    <style>
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Roboto', sans-serif; overflow-x: hidden; background-color: #18181b; }
+
+        /* Blocky, tactical scrollbar */
+        ::-webkit-scrollbar { width: 12px; }
+        ::-webkit-scrollbar-track { background: #18181b; border-left: 2px solid #3f3f46; }
+        ::-webkit-scrollbar-thumb { background: #f59e0b; border-radius: 0px; }
+        ::-webkit-scrollbar-thumb:hover { background: #d97706; }
+
+        /* Engineering Grid Background */
+        .engineering-grid {
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        /* Sharp Polygon Clip for Images */
+        .sharp-cut {
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 90% 100%, 0 100%);
+        }
+    </style>
+</head>
+<body class="text-gray-300 antialiased selection:bg-rust-500 selection:text-white">
+
+    <!-- Navbar (Solid, Thick Borders) -->
+    <nav class="fixed w-full z-50 bg-steel-900 border-b-4 border-rust-500 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="font-heavy text-3xl font-bold text-white tracking-widest uppercase">Sulla<span class="text-rust-500">.</span></a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#home" class="font-heavy text-gray-400 hover:text-white transition tracking-widest text-lg uppercase">Base</a>
+                <a href="#about" class="font-heavy text-gray-400 hover:text-white transition tracking-widest text-lg uppercase">Blueprint</a>
+                <a href="#services" class="font-heavy text-gray-400 hover:text-white transition tracking-widest text-lg uppercase">Operations</a>
+                <a href="#contact" class="px-6 py-2 bg-rust-500 text-steel-900 font-heavy tracking-widest uppercase font-bold hover:bg-rust-600 transition-all shadow-[4px_4px_0px_0px_rgba(255,255,255,0.1)] hover:shadow-none hover:translate-y-1 hover:translate-x-1">Establish Comms</a>
+            </div>
+
+            <!-- Mobile Trigger -->
+            <button class="md:hidden text-rust-500 text-3xl" id="menu-btn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Dropdown -->
+        <div class="md:hidden bg-steel-800 border-b border-steel-700 hidden flex-col items-center py-6 space-y-6" id="mobile-menu">
+            <a href="#home" class="text-gray-300 hover:text-rust-500 text-xl uppercase font-heavy tracking-widest">Base</a>
+            <a href="#about" class="text-gray-300 hover:text-rust-500 text-xl uppercase font-heavy tracking-widest">Blueprint</a>
+            <a href="#services" class="text-gray-300 hover:text-rust-500 text-xl uppercase font-heavy tracking-widest">Operations</a>
+            <a href="#contact" class="text-rust-500 text-xl uppercase font-heavy tracking-widest font-bold">Establish Comms</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center pt-24 pb-12 px-6 relative engineering-grid">
+        <!-- Heavy corner accent -->
+        <div class="absolute top-24 left-6 w-16 h-16 border-t-4 border-l-4 border-rust-500 hidden lg:block"></div>
+        <div class="absolute bottom-12 right-6 w-16 h-16 border-b-4 border-r-4 border-rust-500 hidden lg:block"></div>
+
+        <div class="max-w-7xl mx-auto flex flex-col-reverse lg:flex-row items-center gap-12 z-10 mt-10">
+            
+            <!-- Text Content -->
+            <div class="flex-1 text-center lg:text-left" data-aos="fade-up" data-aos-duration="1000">
+                <div class="inline-block bg-steel-800 border border-steel-700 px-4 py-2 text-sm font-heavy text-gray-400 tracking-widest uppercase mb-6">
+                    <i class="fa-solid fa-microchip text-rust-500 mr-2"></i> System Online
+                </div>
+                
+                <h1 class="text-6xl md:text-8xl font-heavy font-bold text-white mb-2 uppercase leading-none tracking-tight">
+                    Shernan C.<br><span class="text-rust-500">Sulla</span>
+                </h1>
+                
+                <h2 class="text-2xl md:text-3xl font-heavy text-gray-400 mb-6 uppercase tracking-widest">
+                    Full Stack Web Developer
+                </h2>
+                
+                <p class="text-gray-300 font-medium text-lg mb-10 max-w-lg mx-auto lg:mx-0 border-l-4 border-rust-500 pl-4 bg-steel-800/50 p-4">
+                    <i class="fa-solid fa-location-crosshairs text-rust-500 mr-2"></i> Stationed in Parañaque City, Philippines
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start">
+                    <a href="#services" class="px-8 py-4 bg-white text-steel-900 font-heavy uppercase tracking-widest text-lg hover:bg-gray-300 transition duration-300 shadow-[4px_4px_0px_0px_rgba(245,158,11,1)] hover:shadow-none hover:translate-y-1 hover:translate-x-1">
+                        View Operations
+                    </a>
+                    <a href="mailto:shernansulla187@gmail.com" class="px-8 py-4 border-2 border-rust-500 bg-steel-900 hover:bg-rust-500 hover:text-steel-900 text-rust-500 font-heavy uppercase tracking-widest text-lg transition duration-300">
+                        Initialize Contact
+                    </a>
+                </div>
+            </div>
+
+            <!-- Profile Image (Industrial Sharp Frame) -->
+            <div class="flex-1 flex justify-center lg:justify-end" data-aos="zoom-in" data-aos-duration="1000">
+                <div class="relative w-80 h-80 md:w-[450px] md:h-[450px]">
+                    <!-- Heavy backdrop box -->
+                    <div class="absolute inset-0 bg-rust-500 translate-x-4 translate-y-4 sharp-cut"></div>
+                    
+                    <!-- Main Image -->
+                    <!-- Palitan ito ng picture niya, dapat shernan.jpg -->
+                    <img src="shernan.jpg" onerror="this.onerror=null; this.src='https://placehold.co/600x600/27272a/f59e0b?text=Upload+shernan.jpg'" alt="Shernan C. Sulla" class="w-full h-full object-cover sharp-cut border-4 border-steel-700 z-10 relative grayscale hover:grayscale-0 transition duration-500">
+                    
+                    <!-- Tech overlay decoration -->
+                    <div class="absolute bottom-4 left-4 z-20 bg-steel-900/90 border border-rust-500 px-3 py-1 font-heavy text-rust-500 tracking-widest text-sm uppercase">
+                        DEV-187
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Blueprint / About Section -->
+    <section id="about" class="py-24 px-6 bg-steel-900 border-t-2 border-steel-800">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-6xl font-heavy font-bold text-white mb-4 uppercase tracking-wider">The Blueprint</h2>
+                <div class="w-24 h-2 bg-rust-500 mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="bg-steel-800 p-8 border-l-4 border-rust-500" data-aos="fade-right">
+                    <h3 class="text-2xl font-heavy text-white mb-4 uppercase tracking-widest">Constructing the Web</h3>
+                    <p class="text-gray-400 leading-relaxed mb-6">
+                        I am a Full Stack Developer dedicated to forging heavy-duty, reliable, and functional web applications. I approach coding like structural engineering—building strong foundations on the back-end and tough, user-friendly interfaces on the front-end.
+                    </p>
+                    <p class="text-gray-400 leading-relaxed font-bold">
+                        Ready to deploy robust solutions and tackle complex technical challenges.
+                    </p>
+                </div>
+                
+                <!-- Tech Stack Toolbox -->
+                <div class="grid grid-cols-2 gap-4" data-aos="fade-left">
+                    <div class="bg-steel-800 border border-steel-700 p-6 flex flex-col items-center justify-center hover:border-rust-500 transition-all group">
+                        <i class="fa-brands fa-html5 text-5xl text-gray-500 group-hover:text-rust-500 mb-3 transition-colors"></i>
+                        <h4 class="font-heavy text-white uppercase tracking-widest">HTML5</h4>
+                        <span class="text-xs text-gray-500 font-bold">STRUCTURE</span>
+                    </div>
+                    <div class="bg-steel-800 border border-steel-700 p-6 flex flex-col items-center justify-center hover:border-rust-500 transition-all group">
+                        <i class="fa-brands fa-css3-alt text-5xl text-gray-500 group-hover:text-rust-500 mb-3 transition-colors"></i>
+                        <h4 class="font-heavy text-white uppercase tracking-widest">CSS3</h4>
+                        <span class="text-xs text-gray-500 font-bold">STYLING</span>
+                    </div>
+                    <div class="bg-steel-800 border border-steel-700 p-6 flex flex-col items-center justify-center hover:border-rust-500 transition-all group">
+                        <i class="fa-brands fa-js text-5xl text-gray-500 group-hover:text-rust-500 mb-3 transition-colors"></i>
+                        <h4 class="font-heavy text-white uppercase tracking-widest">JavaScript</h4>
+                        <span class="text-xs text-gray-500 font-bold">LOGIC</span>
+                    </div>
+                    <div class="bg-steel-800 border border-steel-700 p-6 flex flex-col items-center justify-center hover:border-rust-500 transition-all group">
+                        <i class="fa-brands fa-php text-5xl text-gray-500 group-hover:text-rust-500 mb-3 transition-colors"></i>
+                        <h4 class="font-heavy text-white uppercase tracking-widest">PHP</h4>
+                        <span class="text-xs text-gray-500 font-bold">BACK-END</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Operations / Services Section (Replacement for Projects) -->
+    <section id="services" class="py-24 px-6 bg-steel-800 engineering-grid">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-6xl font-heavy font-bold text-white mb-4 uppercase tracking-wider">Core Operations</h2>
+                <div class="w-24 h-2 bg-rust-500 mx-auto"></div>
+                <p class="text-gray-400 mt-6 max-w-2xl mx-auto font-medium text-lg">Ready to execute heavy-duty web development tasks. Equipped with the right tools for full-stack deployment.</p>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Service 1 -->
+                <div class="bg-steel-900 border-t-4 border-steel-700 p-8 hover:border-rust-500 transition-colors duration-300 shadow-xl" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fa-solid fa-drafting-compass text-5xl text-rust-500 mb-6 block"></i>
+                    <h3 class="text-2xl font-heavy font-bold text-white mb-3 uppercase tracking-wide">Front-End Assembly</h3>
+                    <p class="text-gray-400 leading-relaxed text-md">
+                        Constructing rigid, responsive, and highly functional user interfaces. Focusing on seamless user experience using HTML5, CSS3, and modern JavaScript.
+                    </p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-steel-900 border-t-4 border-steel-700 p-8 hover:border-rust-500 transition-colors duration-300 shadow-xl" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fa-solid fa-server text-5xl text-rust-500 mb-6 block"></i>
+                    <h3 class="text-2xl font-heavy font-bold text-white mb-3 uppercase tracking-wide">Back-End Engineering</h3>
+                    <p class="text-gray-400 leading-relaxed text-md">
+                        Building the heavy machinery behind the scenes. Structuring secure and efficient server-side logic and database connections using PHP.
+                    </p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-steel-900 border-t-4 border-steel-700 p-8 hover:border-rust-500 transition-colors duration-300 shadow-xl" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fa-solid fa-screwdriver-wrench text-5xl text-rust-500 mb-6 block"></i>
+                    <h3 class="text-2xl font-heavy font-bold text-white mb-3 uppercase tracking-wide">System Maintenance</h3>
+                    <p class="text-gray-400 leading-relaxed text-md">
+                        Providing technical support, code refactoring, and debugging to ensure that existing web applications stay operational under pressure.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 px-6 bg-steel-900 border-t-4 border-rust-500">
+        <div class="max-w-4xl mx-auto text-center" data-aos="zoom-in">
+            <i class="fa-solid fa-satellite-dish text-6xl text-gray-600 mb-6"></i>
+            <h2 class="text-4xl md:text-6xl font-heavy font-bold text-white mb-6 uppercase tracking-wider">Contact Base</h2>
+            <p class="text-gray-400 text-lg mb-10 max-w-xl mx-auto">
+                Ready for deployment on new projects. If you need a solid developer for your next structural build, transmit a message below.
+            </p>
+            
+            <!-- Heavy tactical button -->
+            <a href="mailto:shernansulla187@gmail.com" class="inline-flex items-center gap-4 bg-rust-500 text-steel-900 px-10 py-5 font-heavy text-2xl tracking-widest uppercase font-bold hover:bg-rust-600 transition-colors">
+                <i class="fa-solid fa-envelope"></i>
+                Transmit Email
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-gray-600 py-8 text-center font-heavy uppercase tracking-widest text-sm border-t border-steel-800">
+        <p class="mb-1 text-rust-500">Built Tough. Built to Last.</p>
+        <p>&copy; 2026 Shernan C. Sulla. Engineered by Julius Gabriel Reyes.</p>
+    </footer>
+
+    <!-- AOS (Animate On Scroll) -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ once: false, offset: 80 });
+
+        // Mobile menu
+        const btn = document.getElementById('menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('flex');
+        });
+
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+                menu.classList.remove('flex');
+            });
+        });
+    </script>
+</body>
+</html>
